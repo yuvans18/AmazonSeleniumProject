@@ -1,0 +1,5 @@
+com\amazon\auto\test\BaseTest.class
+com\amazon\auto\test\HelloWorld.class
+com\amazon\auto\test\SearchProductTest.class
+com\amazon\auto\test\WebDriverManager.class
+com\amazon\auto\test\LoginTest.class
