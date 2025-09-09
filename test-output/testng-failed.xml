@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amazon.auto.test.AddToCartTest">
+      <class name="com.amazon.auto.test.AmazonFlowTest">
         <methods>
-          <include name="directAddToCartAndProceed"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="amazonCompleteFlow"/>
         </methods>
-      </class> <!-- com.amazon.auto.test.AddToCartTest -->
+      </class> <!-- com.amazon.auto.test.AmazonFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

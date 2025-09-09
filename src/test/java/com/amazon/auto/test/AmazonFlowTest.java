@@ -26,63 +26,49 @@ public class AmazonFlowTest {
 
     @Test
     public void amazonCompleteFlow() {
-        // 1. Open Amazon login page directly
        
         driver.get("https://www.amazon.com/ap/signin?openid.pape.max_auth_age=900" +
                    "&openid.return_to=https%3A%2F%2Fwww.amazon.com%3F" +
                    "&openid.assoc_handle=usflex&openid.mode=checkid_setup" +
                    "&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
-        System.out.println("✅ Opened Amazon Login Page");
         System.out.println(" Opened Amazon Login Page");
 
-        // 2. Login
  
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_email")));
         emailField.clear();
-        emailField.sendKeys("Yuvankarthikeyans@gmail.com");
         emailField.sendKeys("Your amazon id");
         driver.findElement(By.id("continue")).click();
 
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_password")));
         passwordField.clear();
-        passwordField.sendKeys("Yuvan@18");
         passwordField.sendKeys("Your password");
         driver.findElement(By.id("signInSubmit")).click();
-        System.out.println("✅ Login Completed");
         System.out.println(" Login Completed");
 
-        // 3. Search for laptops
        
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
         searchBox.sendKeys("laptop");
         driver.findElement(By.id("nav-search-submit-button")).click();
-        System.out.println("✅ Searched for laptop");
         System.out.println(" Searched for laptop");
 
-        // 4. Apply filter "4 Stars & Up"
        
         WebElement filter = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='4 Stars & Up']")));
         filter.click();
-        System.out.println("✅ Applied filter");
         System.out.println(" Applied filter");
 
 
-        // 5. Click first laptop product
         WebElement firstProduct = wait.until(ExpectedConditions.elementToBeClickable(
             By.cssSelector("div.s-main-slot div[data-component-type='s-search-result'] h2 a")));
         firstProduct.click();
 
-        // Switch to new window/tab
 
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
         }
 
-        // 6. Add to cart
       
         WebElement addToCartBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-button")));
         addToCartBtn.click();
-        System.out.println("✅ Added product to cart");
         System.out.println(" Added product to cart");
     }
 
@@ -90,7 +76,6 @@ public class AmazonFlowTest {
     public void tearDown() {
         if (driver != null) {
             driver.quit();
-            System.out.println("✅ Browser closed");
             System.out.println(" Browser closed");
         }
     }

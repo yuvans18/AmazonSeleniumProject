@@ -25,6 +25,8 @@ public class AddToCartTest {
         searchBox.sendKeys("laptop");
         driver.findElement(By.id("nav-search-submit-button")).click();
  
+        
+        
               List<WebElement> results = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                 By.cssSelector("div.s-main-slot div[data-component-type='s-search-result']")
         ));
