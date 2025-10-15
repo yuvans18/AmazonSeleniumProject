@@ -36,12 +36,12 @@ public class AmazonFlowTest {
  
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_email")));
         emailField.clear();
-        emailField.sendKeys("Your amazon id");
+        emailField.sendKeys("Yuvankarthikeyans@gmail.com");
         driver.findElement(By.id("continue")).click();
 
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ap_password")));
         passwordField.clear();
-        passwordField.sendKeys("Your password");
+        passwordField.sendKeys("Yuvan@123");
         driver.findElement(By.id("signInSubmit")).click();
         System.out.println(" Login Completed");
 
